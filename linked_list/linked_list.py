@@ -33,14 +33,19 @@ class LinkedList(object):
         current_position = 1
         while current.next and position != current_position:
             current = current.next
+            current_position += 1
         return current
 
     def insert(self, new_element, position):
-        """Insert a new node at the given position.
-        Assume the first position is "1".
-        Inserting at position 3 means between
-        the 2nd and 3rd elements."""
-        pass
+        current = self.head
+        before = current
+        current_position = 1
+        while current.next and position != current_position:
+            before = current
+            current = current.next
+            current_position += 1
+        new_element.next = current
+        before.next = new_element
 
     def delete(self, value):
         """Delete the first node with a given value."""
