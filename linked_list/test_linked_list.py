@@ -27,3 +27,9 @@ class TestLinkedList:
         self.ll.insert(e5, 3)
         assert self.ll.get_position(3).value == 5
         assert self.ll.get_position(4).value == 4
+
+    def test_delete_position(self):
+        self.ll.delete(1)
+        assert self.ll.get_position(1).value == 2
+        assert self.ll.get_position(2).value == 3
+        assert self.ll.get_position(3).value == 3
